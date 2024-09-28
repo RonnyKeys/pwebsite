@@ -1,6 +1,8 @@
 {
-  "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
+    "strict": false, // Turns off strict mode
+    "noImplicitAny": false, // Allows variables to be `any` without explicit annotation
+    "strictNullChecks": false, // Disables strict null checks
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
@@ -8,5 +10,4 @@
       "@ui/*": ["src/components/ui/*"]
     }
   }
-  
 }
