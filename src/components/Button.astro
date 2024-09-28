@@ -15,11 +15,11 @@ const {classes = "default"} = Astro.props
  
 .btn2 {
   /* Variables */
-  --button_radius: 5px;
+  --button_radius: 2px;
   --button_color: white; 
   --button_outline_color: #000000;
   font-size: 18px;
-  
+  width: fit-content;
   border: none;
   cursor: pointer;
   border-radius: var(--button_radius);
@@ -32,7 +32,7 @@ const {classes = "default"} = Astro.props
   box-sizing: border-box;
   border: 1px solid var(--button_outline_color);
   border-radius: var(--button_radius);
-  padding: 0.5em .75em;
+  padding: 0.4em .3em;
   background: var(--button_color);
   color: var(--button_outline_color);
   transform: translateY(-0.2em);
@@ -41,12 +41,12 @@ const {classes = "default"} = Astro.props
 
 .btn2:hover .button_top {
   /* Pull the button upwards when hovered */
-  transform: translateY(-0.33em);
+  transform: translateY(-0.1em);
 }
 
 .btn2:active .button_top {
   /* Push the button downwards when pressed */
-  transform: translateY(0);
+  transform: translateY(1);
 }
 
 
