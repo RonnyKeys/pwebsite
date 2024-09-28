@@ -384,39 +384,68 @@ import Button from "./Button.astro";
 </style>
 
 <script>
-    // add classes for mobile navigation toggling
-var CSbody = document.querySelector('body');
+// Variables
+const CSbody = document.querySelector('body');
 const CSnavbarMenu = document.querySelector('#cs-navigation');
 const CShamburgerMenu = document.querySelector('#cs-navigation .cs-toggle');
+const dropDowns = document.querySelectorAll('#cs-navigation .cs-dropdown');
 
-CShamburgerMenu.addEventListener('click', function () {
-	CShamburgerMenu.classList.toggle('cs-active');
-	CSnavbarMenu.classList.toggle('cs-active');
-	CSbody.classList.toggle('cs-open');
-	// run the function to check the aria-expanded value
-	ariaExpanded();
-});
+// Throttle function to prevent multiple triggers from rapid clicks
+function throttle(func, delay) {
+  let lastCall = 0;
+  return function(...args) {
+    const now = (new Date).getTime();
+    if (now - lastCall >= delay) {
+      lastCall = now;
+      return func(...args);
+    }
+  };
+}
 
-// checks the value of aria expanded on the cs-ul and changes it accordingly whether it is expanded or not
+
+// Function to toggle mobile navigation menu
+function toggleMobileNav() {
+  if (CShamburgerMenu) {
+    CShamburgerMenu.classList.toggle('cs-active');
+    const expanded = CShamburgerMenu.classList.contains('cs-active') ? 'true' : 'false';
+    CShamburgerMenu.setAttribute('aria-expanded', expanded);
+  }
+  
+  if (CSnavbarMenu) {
+    CSnavbarMenu.classList.toggle('cs-active');
+  }
+
+  if (CSbody) {
+    CSbody.classList.toggle('cs-open');
+  }
+
+  ariaExpanded();
+}
+
+// Ensure the function is executed only when csUL exists
 function ariaExpanded() {
-	const csUL = document.querySelector('#cs-expanded');
-	const csExpanded = csUL.getAttribute('aria-expanded');
-
-	if (csExpanded === 'false') {
-		csUL.setAttribute('aria-expanded', 'true');
-	} else {
-		csUL.setAttribute('aria-expanded', 'false');
-	}
+  const csUL = document.querySelector('#cs-expanded');
+  if (csUL) {
+    const csExpanded = csUL.getAttribute('aria-expanded') === 'true' ? 'false' : 'true';
+    csUL.setAttribute('aria-expanded', csExpanded);
+  }
 }
 
-// mobile nav toggle code
-const dropDowns = Array.from(document.querySelectorAll('#cs-navigation .cs-dropdown'));
-for (const item of dropDowns) {
-	const onClick = () => {
-		item.classList.toggle('cs-active');
-	};
-	item.addEventListener('click', onClick);
+// Mobile nav toggle code
+if (CShamburgerMenu) {
+  CShamburgerMenu.addEventListener('click', throttle(toggleMobileNav, 250));
 }
+
+// Dropdown toggle for mobile nav
+if (dropDowns.length > 0) {
+  dropDowns.forEach(item => {
+    item.addEventListener('click', () => {
+      item.classList.toggle('cs-active');
+    });
+  });
+}
+
+
                                 
 </script> 
 
