@@ -11,39 +11,40 @@ import Hero from '@/components/Hero.astro';
 
 <BasicLayout title="Home Page" description= "Piano Lessons in Kempner, TX">
 	  <Hero />
-      <section class="lesson-section">
-          <div class="lesson-container container">
-              <div class="lesson-txt">
-                  <h2>Lesson Options</h2>
-                  <p>I have two lesson times available: 30 minutes or 45 minutes. Choose the perfect lesson length to match your goals and schedule.</p>
-                  <div class="lesson-btn"><Button classes="btn2">Learn More</Button></div>
-                </div>
-                <div class="lesson-cards">
-                    
-                        <Card title = "30 Minutes" body = "Ideal for children and adult beginners concentrated skill-building Frequent practice encouragement Great for maintaining consistent progress" />
-                    
-                        <Card title = "45 Minutes" body = "Additional time to delve into more complex concepts. It offers extra focus on repertoire development and is ideal for students preparing for performances or exams" />
-                    
-                </div>
+      
+      
+        <section class="lesson-section">
+            <div class="lesson-container container">
+                <div class="lesson-txt">
+                    <h2>Lesson Options</h2>
+                    <p>I have two lesson times available: 30 minutes or 45 minutes. Choose the perfect lesson length to match your goals and schedule.</p>
+                    <div class="lesson-btn"><Button href="/lessons"classes="btn2">Learn More</Button></div>
+                  </div>
+                  <div class="lesson-cards">
+                      
+                          <Card title = "30 Minutes" body = "Ideal for children and adult beginners concentrated skill-building Frequent practice encouragement Great for maintaining consistent progress" />
+                      
+                          <Card title = "45 Minutes" body = "Additional time to delve into more complex concepts. It offers extra focus on repertoire development and is ideal for students preparing for performances or exams" />
+                      
+                  </div>
+                  
+              </div>
+        </section>
+        <section class="about">
+            <div class="about-container container">
                 
-            </div>
-      </section>
-    
-     <section class="about">
-        <div class="about-container container">
-            
                 <div class="about-image">
                     <img src="../images/about-img.jpeg" alt="Meghan Brodsky at the piano" />
-                </div>
-           
-            <div class="about-text">
-                <h2>About Me</h2>
-                <p>I'm Meghan Brodsky, a passionate piano instructor with over 20 years of experience. I specialize in piano lessons with a strong focus on music theory, tailoring my approach to each student's unique learning style and goals</p>
-                <Button classes="btn2">Learn more about me</Button>
-            </div>
-          
-        </div>
-    </section> 
+                  </div>
+                  
+                  <div class="about-text">
+                      <h2>About Me</h2>
+                      <p>I'm Meghan Brodsky, a passionate piano instructor with over 20 years of experience. I specialize in piano lessons with a strong focus on music theory, tailoring my approach to each student's unique learning style and goals</p>
+                      <Button href ="/about" classes="btn2">Learn more about me</Button>
+                  </div>
+                  
+              </div>
+          </section> 
 
     <section class="recital">
         <div class="recital-container container">
@@ -77,20 +78,24 @@ import Hero from '@/components/Hero.astro';
 
 <style>
    
-    
+    .about {
+        background-color: #fff;
+    }
     .about-container {
-        gap: 50px;
-        border-bottom: solid;
-        border-top: solid;
+        gap: 10px;
+        border-bottom: 5px solid;
+        border-top: 5px solid;
         border-left: 1px solid;
         border-right: 1px solid;
         border-radius: 10px;
         padding: 15px 0;
+        background-color: #faf6f2;
     }
     .about-text {
         display: flex;
         justify-content: center;
         flex-direction: column;
+        padding: 50px;
 
     }
     .about-image {
