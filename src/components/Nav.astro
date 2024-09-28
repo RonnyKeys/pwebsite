@@ -1,24 +1,11 @@
----
-const navData = [
-    {title: "Home", href: "/"},
-    {title: "About", href: "/about"},
-    {title: "Lessons", href: "/lessons"},
-    {title: "Blog", href: "/blog"},
-    {title: "Contact", href: "/contact"},
-]
-import Button from "./Button.astro";
----
 
-<!-- ============================================ -->
-<!--                 Navigation                   -->
-<!-- ============================================ -->
 
 <header id="cs-navigation">
   <div class="cs-container">
       <!--Nav Logo-->
-    <a href="" class="cs-logo" aria-label="back to home">
-        <img src="/images/Brodsky (3).png" alt="logo" width="219" height="29" aria-hidden="true" decoding="async">
-    </a>
+      <a href="" class="cs-logo" aria-label="back to home">
+          <img src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Flogo-black.svg" alt="logo" width="210" height="29" aria-hidden="true" decoding="async">
+      </a>
       <!--Navigation List-->
       <nav class="cs-nav" role="navigation">
           <!--Mobile Nav Toggle-->
@@ -32,18 +19,105 @@ import Button from "./Button.astro";
           <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
           <div class="cs-ul-wrapper">
               <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
-                  {navData.map((link) => 
-                    <li class="cs-li">
-                        <a href={link.href} class="cs-li-link">{link.title}</a>
-                    </li>)}
+                  <li class="cs-li">
+                      <a href="" class="cs-li-link cs-active">
+                          Home
+                      </a>
+                  </li>
+                  <li class="cs-li">
+                      <a href="" class="cs-li-link">
+                          About
+                      </a>
+                  </li>
+                  <li class="cs-li">
+                      <a href="" class="cs-li-link">
+                          Services
+                      </a>
+                  </li>
+                  <li class="cs-li">
+                      <a href="" class="cs-li-link">
+                          About Us
+                      </a>
+                  </li>
+                  <li class="cs-li">
+                      <a href="" class="cs-li-link">
+                          FAQ
+                      </a>
+                  </li>
               </ul>
           </div>
-        </nav>
-      <div class="btn2 cs-nav-button"><Button classes="btn2">Click Me</Button></div>
-    </div>
+      </nav>
+      <a href="" class="cs-button-solid cs-nav-button">Contact Us</a>
+      <!--Dark Mode toggle, uncomment button code if you want to enable a dark mode toggle-->
+      <!-- <button id="dark-mode-toggle" aria-label="dark mode toggle">
+          <svg class="cs-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" style="enable-background:new 0 0 480 480" xml:space="preserve"><path d="M459.782 347.328c-4.288-5.28-11.488-7.232-17.824-4.96-17.76 6.368-37.024 9.632-57.312 9.632-97.056 0-176-78.976-176-176 0-58.4 28.832-112.768 77.12-145.472 5.472-3.712 8.096-10.4 6.624-16.832S285.638 2.4 279.078 1.44C271.59.352 264.134 0 256.646 0c-132.352 0-240 107.648-240 240s107.648 240 240 240c84 0 160.416-42.688 204.352-114.176 3.552-5.792 3.04-13.184-1.216-18.496z"/></svg>
+          <img class="cs-sun" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsun.svg" decoding="async" alt="moon" width="15" height="15">
+      </button> -->
+  </div>
 </header>
-
+                              
 <style>
+  :root {
+    /* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
+    --primary: #ff6a3e;
+    --primaryLight: #ffba43;
+    --secondary: #ffba43;
+    --secondaryLight: #ffba43;
+    --headerColor: #1a1a1a;
+    --bodyTextColor: #4e4b66;
+    --bodyTextColorWhite: #fafbfc;
+    /* 13px - 16px */
+    --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
+    /* 31px - 49px */
+    --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
+    --bodyFontSize: 1rem;
+    /* 60px - 100px top and bottom */
+    --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+*, *:before, *:after {
+    /* prevents padding from affecting height and width */
+    box-sizing: border-box;
+}
+.cs-topper {
+    font-size: var(--topperFontSize);
+    line-height: 1.2em;
+    text-transform: uppercase;
+    text-align: inherit;
+    letter-spacing: .1em;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.25rem;
+    display: block;
+}
+
+.cs-title {
+    font-size: var(--headerFontSize);
+    font-weight: 900;
+    line-height: 1.2em;
+    text-align: inherit;
+    max-width: 43.75rem;
+    margin: 0 0 1rem 0;
+    color: var(--headerColor);
+    position: relative;
+}
+
+.cs-text {
+    font-size: var(--bodyFontSize);
+    line-height: 1.5em;
+    text-align: inherit;
+    width: 100%;
+    max-width: 40.625rem;
+    margin: 0;
+    color: var(--bodyTextColor);
+}
+                            
+
 /*-- -------------------------- -->
 <---     Mobile Navigation      -->
 <--- -------------------------- -*/
@@ -58,15 +132,14 @@ import Button from "./Button.astro";
     box-sizing: border-box;
     padding: 0.75rem 1rem;
     background-color: #fff;
-    /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
-    position: relative;
-    z-index: 1000;  
-    border-bottom: solid 1px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    position: fixed;
+    z-index: 10000;
   }
   #cs-navigation:before {
     content: "";
     width: 100%;
-    height: 100vh;
+    height: 0vh;
     background: rgba(0, 0, 0, 0.6);
     opacity: 0;
     display: block;
@@ -79,12 +152,13 @@ import Button from "./Button.astro";
     backdrop-filter: blur(10px);
   }
   #cs-navigation.cs-active:before {
-    height: 120vh;
+    height: 150vh;
     opacity: 1;
   }
   #cs-navigation.cs-active .cs-ul-wrapper {
     opacity: 1;
     transform: scaleY(1);
+    transition-delay: 0.15s;
   }
   #cs-navigation.cs-active .cs-li {
     opacity: 1;
@@ -98,7 +172,7 @@ import Button from "./Button.astro";
   }
   #cs-navigation .cs-logo {
     width: 40%;
-    max-width: 14.125rem;
+    max-width: 9.125rem;
     height: 100%;
     margin: 0 auto 0 0;
     /* prevents padding and border from affecting height and width */
@@ -107,7 +181,7 @@ import Button from "./Button.astro";
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 10
+    z-index: 10;
   }
   #cs-navigation .cs-logo img {
     width: 100%;
@@ -182,18 +256,17 @@ import Button from "./Button.astro";
     width: 100%;
     height: auto;
     padding-bottom: 2.4em;
-    background-color: white;
+    background-color: #fff;
     box-shadow: inset rgba(0, 0, 0, 0.2) 0px 8px 24px;
     opacity: 0;
     position: absolute;
     top: 100%;
     left: 0;
-    z-index: 1000;
+    z-index: -1;
     overflow: hidden;
     transform: scaleY(0);
     transition: transform 0.4s, opacity 0.3s;
     transform-origin: top;
-    border-top: solid 1px;
   }
   #cs-navigation .cs-ul {
     width: 100%;
@@ -263,7 +336,7 @@ import Button from "./Button.astro";
     line-height: 1.2em;
     text-decoration: none;
     margin: 0;
-    color: var(--secondary);
+    color: var(--headerColor);
     display: inline-block;
     position: relative;
   }
@@ -282,7 +355,7 @@ import Button from "./Button.astro";
   #cs-navigation .cs-li-link.cs-active:before {
     display: block;
   }
-   .btn2 {
+  #cs-navigation .cs-button-solid {
     display: none;
   }
 }
@@ -293,18 +366,17 @@ import Button from "./Button.astro";
 @media only screen and (min-width: 64rem) {
   #cs-navigation {
     width: 100%;
+    /* prevents padding and border from affecting height and width */
     box-sizing: border-box;
     padding: 0 1rem;
-    /* background-color: var(--headerColor); */
-    /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
-    border-bottom: solid 1px;
-    position: relative;
+    background-color: #fff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    position: fixed;
     z-index: 10000;
-    
   }
   #cs-navigation .cs-container {
-    width: 80%;
-    /* max-width: 80rem; */
+    width: 100%;
+    max-width: 80rem;
     margin: auto;
     display: flex;
     justify-content: flex-end;
@@ -316,7 +388,7 @@ import Button from "./Button.astro";
   }
   #cs-navigation .cs-logo {
     width: 18.4%;
-    max-width: 14.875rem;
+    max-width: 21.875rem;
     height: 4.0625rem;
     /* margin-right auto pushes everything away from it to the right */
     margin: 0 auto 0 0;
@@ -349,23 +421,106 @@ import Button from "./Button.astro";
     flex: none;
   }
   #cs-navigation .cs-li-link {
-    
-    font-size: clamp(0.8125rem, 0.7799rem + 0.1739vw, 0.9375rem);
-    line-height: 1.5rem;
+    /* 14px - 16px */
+    font-size: clamp(0.875rem, 1vw, 1rem);
+    line-height: 1.5em;
     text-decoration: none;
     margin: 0;
     color: var(--bodyTextColor);
     display: block;
     position: relative;
   }
- 
+  #cs-navigation .cs-li-link:hover:before {
+    width: 100%;
+  }
+  #cs-navigation .cs-li-link.cs-active:before {
+    width: 100%;
+  }
+  #cs-navigation .cs-li-link:before {
+    /* active state underline */
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: var(--primary);
+    opacity: 1;
+    display: block;
+    position: absolute;
+    bottom: 0rem;
+    left: 0;
+    transition: width 0.3s;
+  }
+  #cs-navigation .cs-button-solid {
+    font-size: 1rem;
+    font-weight: 700;
+    /* 46px - 56px */
+    line-height: clamp(2.875em, 5.5vw, 3.5em);
+    text-align: center;
+    text-decoration: none;
+    min-width: 9.375rem;
+    margin: 0;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+    padding: 0 1.5rem;
+    color: #fff;
+    background-color: var(--primary);
+    border-radius: 0.25rem;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+  }
+  #cs-navigation .cs-button-solid:before {
+    content: "";
+    width: 0%;
+    height: 100%;
+    background: #000;
+    opacity: 1;
+    border-radius: 0.25rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width 0.3s;
+  }
+  #cs-navigation .cs-button-solid:hover:before {
+    width: 100%;
+  }
 }
                                 
-
 </style>
 
+<script is:inline>
+  // add classes for mobile navigation toggling
+var CSbody = document.querySelector('body');
+const CSnavbarMenu = document.querySelector('#cs-navigation');
+const CShamburgerMenu = document.querySelector('#cs-navigation .cs-toggle');
 
+CShamburgerMenu.addEventListener('click', function () {
+	CShamburgerMenu.classList.toggle('cs-active');
+	CSnavbarMenu.classList.toggle('cs-active');
+	CSbody.classList.toggle('cs-open');
+	// run the function to check the aria-expanded value
+	ariaExpanded();
+});
 
+// checks the value of aria expanded on the cs-ul and changes it accordingly whether it is expanded or not
+function ariaExpanded() {
+	const csUL = document.querySelector('#cs-expanded');
+	const csExpanded = csUL.getAttribute('aria-expanded');
 
+	if (csExpanded === 'false') {
+		csUL.setAttribute('aria-expanded', 'true');
+	} else {
+		csUL.setAttribute('aria-expanded', 'false');
+	}
+}
 
-  
+// mobile nav toggle code
+const dropDowns = Array.from(document.querySelectorAll('#cs-navigation .cs-dropdown'));
+for (const item of dropDowns) {
+	const onClick = () => {
+		item.classList.toggle('cs-active');
+	};
+	item.addEventListener('click', onClick);
+}
+                                
+</script>

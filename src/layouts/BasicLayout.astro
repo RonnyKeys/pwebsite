@@ -6,19 +6,15 @@ import Nav from "../components/Nav.astro";
 ---
 
 <!doctype html>
-<html lang="en" transition:animate="none">
+<html lang="en">
 	<BaseHead {...Astro.props}/>
 	<body>
         <Nav />
-
-        <main transition:animate="fade">
+        <!-- <main transition:animate="fade">
             <slot />
         </main>
-         <Footer />  
+         <Footer />   -->
 	</body>
-    <script>
-        import "../scripts/menu.js"
-    </script>
 </html>
 
 <style is:global>
