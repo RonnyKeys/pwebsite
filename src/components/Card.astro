@@ -1,61 +1,55 @@
 ---
-interface Props {
+type Props = {
 	title: string;
 	body: string;
-	href: string;
+	// bulletPoints: string[];
 }
-
-const { href, title, body } = Astro.props;
+const { href, title, body, bulletPoints } = Astro.props;
 ---
 
-<li class="link-card">
-	<a href={href}>
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
-		</p>
-	</a>
-</li>
+<div class="card">
+  <div class="clock"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20%" height="auto" viewBox="0 0 50 50">
+    <path d="M 25 2 C 12.309295 2 2 12.309295 2 25 C 2 37.690705 12.309295 48 25 48 C 37.690705 48 48 37.690705 48 25 C 48 12.309295 37.690705 2 25 2 z M 25 4 C 36.609824 4 46 13.390176 46 25 C 46 36.609824 36.609824 46 25 46 C 13.390176 46 4 36.609824 4 25 C 4 13.390176 13.390176 4 25 4 z M 24.984375 6.9863281 A 1.0001 1.0001 0 0 0 24 8 L 24 22.173828 A 3 3 0 0 0 22 25 A 3 3 0 0 0 22.294922 26.291016 L 16.292969 32.292969 A 1.0001 1.0001 0 1 0 17.707031 33.707031 L 23.708984 27.705078 A 3 3 0 0 0 25 28 A 3 3 0 0 0 28 25 A 3 3 0 0 0 26 22.175781 L 26 8 A 1.0001 1.0001 0 0 0 24.984375 6.9863281 z"></path>
+    </svg></div>
+  <div class="card-details">
+    <h3 class="text-title">
+      {title}
+    </h3>
+    <p class="text-body">
+      {body}
+    </p>
+  </div>
+</div>
+
+
+
 <style>
-	.link-card {
-		list-style: none;
-		display: flex;
-		padding: 1px;
-		background-color: #23262d;
-		background-image: none;
-		background-size: 400%;
-		border-radius: 7px;
-		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-	}
-	.link-card > a {
-		width: 100%;
-		text-decoration: none;
-		line-height: 1.4;
-		padding: calc(1.5rem - 1px);
-		border-radius: 8px;
-		color: white;
-		background-color: #23262d;
-		opacity: 0.8;
-	}
-	h2 {
-		margin: 0;
-		font-size: 1.25rem;
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-	}
-	p {
-		margin-top: 0.5rem;
-		margin-bottom: 0;
-	}
-	.link-card:is(:hover, :focus-within) {
-		background-position: 0;
-		background-image: var(--accent-gradient);
-	}
-	.link-card:is(:hover, :focus-within) h2 {
-		color: rgb(var(--accent-light));
-	}
+  .card {
+    border: solid;
+    border-radius: 15px;
+    width: 350px;
+    text-align: center;
+    height: auto;
+    padding: 25px;
+  
+  }
+  h3 {
+    font-size: clamp(1.5625rem, 1.3179rem + 1.3043vw, 2.5rem);
+  }
+  p {
+    font-size: clamp(0.5rem, 0.3696rem + 0.6957vw, 1rem);
+  }
+
+ 
+
+  
+
+
+
+
+
+
+
+
+
 </style>

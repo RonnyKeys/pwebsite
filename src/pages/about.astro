@@ -1,0 +1,272 @@
+---
+import BasicLayout from "@/layouts/BasicLayout.astro";
+---
+
+<BasicLayout title="about">
+    <!-- ============================================ -->
+<!--             Side by Side Reverse             -->
+<!-- ============================================ -->
+
+<section id="sbs-r-1892">
+    <div class="cs-container">
+        <div class="cs-image-group">
+            <picture class="cs-picture">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="src/images/about-page-img.png">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="src/images/about-page-img.png">
+                <img loading="lazy" decoding="async" src="src/images/about-page-img.png" alt="dermatologist" width="324" height="467">
+            </picture>
+            <img class="cs-graphic cs-brown" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/lines-reverse.svg" alt="graphic" width="208" height="203" aria-hidden="true">
+            <img class="cs-graphic cs-peach" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/blob-reverse.svg" alt="graphic" width="56" height="42" aria-hidden="true">
+            <img class="cs-graphic cs-beige" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/beige-reverse.svg" alt="graphic" width="379" height="394" aria-hidden="true">
+            <img class="cs-graphic cs-leaf" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/leaf-reverse.svg" alt="graphic" width="179" height="225" aria-hidden="true">
+            <img class="cs-graphic cs-lines" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/mesh-reverse.svg" alt="graphic" width="189" height="208" aria-hidden="true">
+            <div class="cs-info">
+                <p class="cs-info-text">
+                    <span class="cs-bold">"Practice with me"</span>
+                    Come learn with me!
+                </p>
+            </div>
+        </div>
+        <div class="cs-content">
+            <div class="cs-flex">
+                <span class="cs-topper">About Me!</span>
+                <h2 class="cs-title">Welcome to Brodsky Music Studio</h2>
+            </div>
+            <p class="cs-text-large">
+                My name is Meghan Brodsky, and I am thrilled to share a little about myself with you! With over 20 years of experience teaching piano, I bring a passion for music that blends seamlessly with a strong foundation in music theory. My approach to piano lessons is not one-size-fits-all; rather, it is highly personalized to fit your unique needs and goals.
+            </p>
+            <p class="cs-text">
+                In our first lesson, we'll explore a variety of topics to set the stage for your musical journey. One of the most important things I hope to learn is why you are eager to take lessons and what motivates you to play. This insight allows me to tailor our sessions to suit your individual learning style, ensuring that your experience is both effective and enjoyable.
+            </p>
+            <p class="cs-text">
+                Additionally, we'll dive into your favorite genres of music and any prior experience you may have with music education. This not only helps us get to know one another but also ensures that we embark on the right path for your personal development. Whether you're starting fresh or building on past knowledge, my goal is to guide you towards a deeper understanding and love for music as we work together to achieve your goals!.
+            </p>
+            <a href="" class="cs-button-solid">Call Me!</a>
+        </div>
+    </div>
+</section>
+                                
+    
+</BasicLayout>
+<style>
+    /*-- -------------------------- -->
+<---    Side by Side Reverse    -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #sbs-r-1892 {
+    width: 100%;
+    padding: var(--sectionPadding);
+    background-color: #faf6f2;
+    display: flex;
+    flex-direction: column;
+    /* aligns content to the left, set to center to centrally align */
+    align-items: flex-start;
+    position: relative;
+    z-index: 1;
+  }
+  #sbs-r-1892 .cs-container {
+    width: 100%;
+    /* changes to 1280px at desktop */
+    max-width: 36.5rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* 48px - 80px */
+    gap: clamp(3rem, 6vw, 5rem);
+  }
+  #sbs-r-1892 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: left;
+    width: 100%;
+    max-width: 35.625rem;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: flex-start;
+    position: relative;
+    z-index: 3;
+  }
+  #sbs-r-1892 .cs-image-group {
+    font-size: min(2.29vw, 0.9rem);
+    width: 39.375em;
+    height: 45.625em;
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+  #sbs-r-1892 .cs-picture {
+    width: 32.625em;
+    height: 42.5em;
+    box-sizing: border-box;
+    background-color: #dab692;
+    overflow: hidden;
+    border: 8px solid #dab692;
+    border-radius: 16.25rem;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+  }
+  #sbs-r-1892 .cs-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.7s;
+  }
+  #sbs-r-1892 .cs-graphic {
+    height: auto;
+    position: absolute;
+  }
+  #sbs-r-1892 .cs-brown {
+    width: 15.125em;
+    height: auto;
+    top: 1.625em;
+    left: 0.8125em;
+    z-index: -2;
+  }
+  #sbs-r-1892 .cs-peach {
+    width: 3.625em;
+    height: auto;
+    top: 0.375em;
+    left: 6.8125em;
+  }
+  #sbs-r-1892 .cs-beige {
+    width: 22em;
+    height: auto;
+    top: 4.4375em;
+    left: 1em;
+    z-index: -3;
+  }
+  #sbs-r-1892 .cs-leaf {
+    width: 14.0625em;
+    height: auto;
+    bottom: 0;
+    right: 1em;
+    z-index: 1;
+  }
+  #sbs-r-1892 .cs-lines {
+    width: 11em;
+    height: auto;
+    bottom: 0;
+    right: 0;
+  }
+  #sbs-r-1892 .cs-info {
+    width: 50%;
+    max-width: 19.0625rem;
+    padding: 6.25em 2.5em;
+    background-color: var(--primary);
+    border-radius: 14rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  #sbs-r-1892 .cs-info-text {
+    /* 14px - 20px */
+    font-size: clamp(0.875rem, 3.5vw, 1.25rem);
+    font-weight: 600;
+    line-height: 1.6em;
+    text-align: center;
+    max-width: 13.9375em;
+    margin: 0;
+    color: var(--secondary);
+  }
+  #sbs-r-1892 .cs-bold {
+    /* 16px - 24x */
+    font-size: clamp(1rem, 3.5vw, 1.5rem);
+    font-weight: 600;
+    line-height: 1.2em;
+    margin: 0 0 0.25rem;
+    color: var(--secondary);
+    display: block;
+  }
+  #sbs-r-1892 .cs-text-large {
+    font-size: 1.25rem;
+    line-height: 1.5em;
+    margin: 0 0 0.75rem;
+    color: var(--bodyTextColor);
+  }
+  #sbs-r-1892 .cs-text {
+    margin-bottom: 0.75rem;
+  }
+  #sbs-r-1892 .cs-text:last-of-type {
+    margin-bottom: 2rem;
+  }
+  #sbs-r-1892 .cs-button-solid {
+    font-size: 1rem;
+    font-weight: 700;
+    /* 46px - 56px */
+    line-height: clamp(2.875em, 5.5vw, 3.5em);
+    text-align: center;
+    text-decoration: none;
+    min-width: 9.375rem;
+    margin: 0;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+    padding: 0 1.5rem;
+    background-color: var(--secondary);
+    overflow: hidden;
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s;
+  }
+  #sbs-r-1892 .cs-button-solid:before {
+    content: "";
+    width: 0;
+    height: 100%;
+    background: #000;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width 0.3s;
+  }
+  #sbs-r-1892 .cs-button-solid:hover {
+    color: #fff;
+  }
+  #sbs-r-1892 .cs-button-solid:hover:before {
+    width: 100%;
+  }
+}
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #sbs-r-1892 .cs-container {
+    max-width: 80rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+  #sbs-r-1892 .cs-content {
+    /* 48px - 64px */
+    padding: clamp(3rem, 5vw, 4rem) 0;
+  }
+  #sbs-r-1892 .cs-image-group {
+    font-size: min(1.27vw, 1rem);
+    min-height: 45.625em;
+    height: auto;
+    flex: none;
+    /* sends it to the right in the 2nd position */
+    order: 2;
+  }
+  #sbs-r-1892 .cs-picture {
+    height: 93.150685%;
+  }
+}
+                                
+
+</style>
