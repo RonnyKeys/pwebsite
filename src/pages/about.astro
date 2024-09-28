@@ -1,5 +1,6 @@
 ---
 import BasicLayout from "@/layouts/BasicLayout.astro";
+import Button from "@/components/Button.astro";
 ---
 
 <BasicLayout title="about">
@@ -24,8 +25,8 @@ import BasicLayout from "@/layouts/BasicLayout.astro";
             <img class="cs-graphic cs-lines" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/mesh-reverse.svg" alt="graphic" width="189" height="208" aria-hidden="true">
             <div class="cs-info">
                 <p class="cs-info-text">
-                    <span class="cs-bold">"Practice with me"</span>
-                    Come learn with me!
+                    <span class="cs-bold">Life is like a piano.</span>
+                    What you get out of it depends on how you play it.
                 </p>
             </div>
         </div>
@@ -43,7 +44,7 @@ import BasicLayout from "@/layouts/BasicLayout.astro";
             <p class="cs-text">
                 Additionally, we'll dive into your favorite genres of music and any prior experience you may have with music education. This not only helps us get to know one another but also ensures that we embark on the right path for your personal development. Whether you're starting fresh or building on past knowledge, my goal is to guide you towards a deeper understanding and love for music as we work together to achieve your goals!.
             </p>
-            <a href="" class="cs-button-solid">Call Me!</a>
+            <Button href="/about" classes="btn2">Contact Me</Button>
         </div>
     </div>
 </section>
@@ -174,7 +175,7 @@ import BasicLayout from "@/layouts/BasicLayout.astro";
   #sbs-r-1892 .cs-info-text {
     /* 14px - 20px */
     font-size: clamp(0.875rem, 3.5vw, 1.25rem);
-    font-weight: 600;
+    font-weight: 300;
     line-height: 1.6em;
     text-align: center;
     max-width: 13.9375em;
@@ -184,7 +185,7 @@ import BasicLayout from "@/layouts/BasicLayout.astro";
   #sbs-r-1892 .cs-bold {
     /* 16px - 24x */
     font-size: clamp(1rem, 3.5vw, 1.5rem);
-    font-weight: 600;
+    font-weight: 400;
     line-height: 1.2em;
     margin: 0 0 0.25rem;
     color: var(--secondary);

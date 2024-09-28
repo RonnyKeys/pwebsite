@@ -59,9 +59,9 @@ body.cs-open {
   /* prevents padding and border from affecting height and width */
   box-sizing: border-box;
   padding: 0.75rem 1rem;
-  background-color: #fff;
+  background-color: #f7f3ef;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  position: fixed;
+  position: absolute;
   z-index: 10000;
 }
 #cs-navigation:before {
@@ -218,6 +218,7 @@ body.cs-open {
   /* transition from these values */
   transform: translateY(-4.375rem);
   transition: transform 0.6s, opacity 0.9s;
+ 
 }
 #cs-navigation .cs-li:nth-of-type(1) {
   transition-delay: 0.05s;
@@ -264,7 +265,7 @@ body.cs-open {
   line-height: 1.2em;
   text-decoration: none;
   margin: 0;
-  color: var(--headerColor);
+  
   display: inline-block;
   position: relative;
 }
@@ -297,7 +298,7 @@ body.cs-open {
   /* prevents padding and border from affecting height and width */
   box-sizing: border-box;
   padding: 0 1rem;
-  background-color: #fff;
+  background-color: var(--nav)
   /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
   /* position: absolute; */
   /* z-index: 10000; */
@@ -347,6 +348,7 @@ body.cs-open {
   padding: 2rem 0;
   /* prevent flexbox from squishing it */
   flex: none;
+  
 }
 #cs-navigation .cs-li-link {
   /* 14px - 16px */
@@ -354,9 +356,11 @@ body.cs-open {
   line-height: 1.5em;
   text-decoration: none;
   margin: 0;
-  color: var(--bodyTextColor);
+  color: black;
   display: block;
   position: relative;
+  font-weight: 500;
+  
 }
 #cs-navigation .cs-li-link:hover:before {
   width: 100%;

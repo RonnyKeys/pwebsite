@@ -20,7 +20,10 @@ import Nav from "../components/Nav.astro";
 <style is:global>
     :root {
     /* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
-    --primary: #ff6a3e;
+    --nav: #ead7c4;
+    --body: #faf6f2;
+    --footer: #ead7c4;
+    --primary: #87b5a1;
     --primaryLight: #ffba43;
     --secondary: #ffba43;
     --secondaryLight: #ffba43;
@@ -39,7 +42,7 @@ import Nav from "../components/Nav.astro";
 body {
     margin: 0;
     padding: 0;
-    background-color: #faf6f2;
+    background-color: var(--body);
 }
 
 *, *:before, *:after {
